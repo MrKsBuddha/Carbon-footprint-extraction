@@ -97,10 +97,11 @@
         }
         chrome.runtime.sendMessage({ type: "SCRAPE_PROGRESS", percent: 10, label: "Starting..." });
         try {
-            window.carbonWidgetClosed = false;  // ✅ reset flag when user explicitly reopens
+            window.carbonWidgetClosed = false;  // reset flag when user explicitly reopens
             run(true);
         } catch (e) {
             chrome.runtime.sendMessage({ type: "SCRAPE_DONE", ok: false, error: "Unable to analyze this page" });
         }
     });
 })();
+
