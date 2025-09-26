@@ -5,7 +5,9 @@ A lightweight Chrome extension that estimates the carbon footprint of items on A
 
 A lightweight Chrome extension that estimates the carbon footprint of items on supported e‑commerce pages. It scrapes product/cart information on Amazon and Flipkart, computes a rough CO2e estimate, and shows a small floating widget with per-item and total emissions.
 
-![Architecture Diagram](https://github.com/user-attachments/assets/177668a5-db47-450f-a0eb-3910468651fe)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/177668a5-db47-450f-a0eb-3910468651fe" alt="Architecture Diagram" width="400">
+</p>
 
 ### Features
 - **On‑page widget**: Floating panel with per‑item and total CO2e.
