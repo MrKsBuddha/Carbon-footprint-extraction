@@ -52,21 +52,7 @@ function showCarbonWidget(data) {
     title.innerText = "Carbon Estimate";
     title.style.margin = "0 0 10px 0";
     div.appendChild(title);
-
-    // Items list
-    /*
-    let list = document.createElement("ul");
-    items.forEach(item => {
-        let li = document.createElement("li");
-        const per = item.emissionGramsPerUnit != null ? `${Math.round(item.emissionGramsPerUnit/1000)} kg CO2e/unit` : "";
-        const tot = item.emissionGramsTotal != null ? `${(item.emissionGramsTotal/1000).toFixed(1)} kg CO2e` : "";
-        li.innerText = `${item.name} (Qty: ${item.qty}) ${tot ? '— ' + tot : ''}`;
-        li.style.wordWrap = "break-word"; // prevent text cut-off
-        li.title = item.name;             // tooltip shows full name
-        list.appendChild(li);
-    });
-    div.appendChild(list);
-    */
+    
     // Items table
     let table = document.createElement("table");
     table.style.width = "100%";
@@ -194,25 +180,13 @@ function showCarbonError(message) {
     div.style.fontFamily = "Arial, sans-serif";
     div.style.zIndex = "9999";
 
-    /*let closeBtn = document.createElement("button");
-    closeBtn.innerText = "✖";
-    closeBtn.style.float = "right";
-    closeBtn.style.border = "none";
-    closeBtn.style.background = "transparent";
-    closeBtn.style.cursor = "pointer";
-    closeBtn.onclick = () => div.remove();
-    div.appendChild(closeBtn);
-    */
     let closeBtn = document.createElement("button");
     closeBtn.innerText = "✖";
     closeBtn.style.float = "right";
     closeBtn.style.border = "none";
     closeBtn.style.background = "transparent";
     closeBtn.style.cursor = "pointer";
-    /*closeBtn.onclick = () => {
-        window.carbonWidgetClosed = true; // mark widget as closed
-        div.remove();
-    };*/
+    
     closeBtn.onclick = () => {
         window.carbonWidgetClosed = true;
         div.remove();
@@ -274,3 +248,4 @@ function makeDraggable(el) {
         document.onmousemove = null;
     }
 }
+
