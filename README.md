@@ -32,7 +32,7 @@ The extension does not activate on other websites.
 ### Usage
 - Navigate to a supported site/product/cart.
 - The extension scans the page and shows the widget in the bottom‑right.
-- Close the widget with the ✖ button.
+- Close the widget with the button.
 
 ### Project structure
 ```text
@@ -80,7 +80,6 @@ carbon-extension_ksh/
 - Emission factors are simplified approximations for demo/educational purposes.
 - Site markup can change; if scraping breaks, update `scraper.js` selectors.
 
-### License
-MIT
+
 
 
