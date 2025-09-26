@@ -55,12 +55,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
 //v2
 /*
-// popup.js
-// ------------------------------------------
-// Popup lets user manually activate the floating widget
-// even if it was closed.
-// ------------------------------------------
-
 const scanBtn = document.getElementById("scan");
 const statusEl = document.getElementById("status");
 const bar = document.getElementById("bar");
@@ -111,27 +105,7 @@ chrome.runtime.onMessage.addListener((msg) => {
 
 
 //v3
-// popup.js
-// ------------------------------------------
-// Popup lets user manually activate the floating widget
-// ------------------------------------------
-
 const scanBtn = document.getElementById("scan");
-
-// Old progress/status logic — keep commented for later reuse
-/*
-const statusEl = document.getElementById("status");
-const bar = document.getElementById("bar");
-
-function setProgress(pct, text) {
-    bar.style.width = Math.max(0, Math.min(100, pct)) + "%";
-    if (text) statusEl.textContent = text;
-}
-
-function setBusy(busy) {
-    scanBtn.disabled = !!busy;
-}
-*/
 
 scanBtn.addEventListener("click", async () => {
     // For now: just send message, no status/progress shown
@@ -145,17 +119,5 @@ scanBtn.addEventListener("click", async () => {
     }
 });
 
-// Old listener for progress messages — commented out
-/*
-chrome.runtime.onMessage.addListener((msg) => {
-    if (!msg || !msg.type) return;
-    if (msg.type === "SCRAPE_PROGRESS") {
-        setProgress(msg.percent || 0, msg.label || "Working...");
-    }
-    if (msg.type === "SCRAPE_DONE") {
-        setProgress(100, msg.ok ? "Done" : (msg.error || "No items found"));
-        setBusy(false);
-    }
-});
-*/
+
 
