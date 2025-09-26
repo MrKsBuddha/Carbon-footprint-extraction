@@ -33,24 +33,6 @@ function scrapeAmazonCart() {
     return items;
 }
 
-/*
-// Scrape Flipkart cart page
-function scrapeFlipkartCart() {
-    let items = [];
-    document.querySelectorAll("._2Kn22P").forEach(el => {
-        let linkEl = el.querySelector("a");
-
-        let name =
-            linkEl?.getAttribute("title") ||  // full name in title attribute
-            linkEl?.innerText ||              // fallback truncated name
-            "Unknown";
-
-        let qty = el.querySelector("._253qQJ")?.innerText || 1;
-        items.push({ site: "Flipkart", name: name.trim(), qty });
-    });
-    return items;
-}
-*/
 // Scrape Flipkart cart page
 function scrapeFlipkartCart() {
     let items = [];
@@ -241,16 +223,6 @@ function scrapeMyntraCart() {
 
 
 // Detect which site we are on and call correct scraper
-/*
-function detectAndScrape() {
-    let host = window.location.hostname;
-    if (host.includes("amazon")) return scrapeAmazonCart();
-    if (host.includes("flipkart")) return scrapeFlipkartCart();
-    return [];
-}
-*/
-
-// Update detectAndScrape to include Myntra
 function detectAndScrape() {
     let host = window.location.hostname;
     if (host.includes("amazon")) return scrapeAmazonCart();
