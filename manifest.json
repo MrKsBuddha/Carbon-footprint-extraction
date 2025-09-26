@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Carbon Footprint Checker",
+  "version": "1.0",
+  "description": "Check carbon emissions of items on webpages",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*",
+        "*://*.amazon.in/*",
+        "*://*.flipkart.com/*",
+        "*://*.myntra.com/*"
+      ],
+      "js": ["scraper.js", "emissions.js", "ui.js", "content.js"]
+    }
+  ]
+}
